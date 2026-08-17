@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descarga Okta Verify para configurar tu acceso de trabajo." />
+    <title>Descarga Okta Verify</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Configuración de acceso</p>
+        <h1 id="page-title">Descarga Okta Verify</h1>
+        <p class="lead">
+          Escanea el código QR correspondiente a tu teléfono para instalar la aplicación antes de continuar con tu configuración.
+        </p>
+      </section>
+
+      <section class="download-options" aria-label="Opciones de descarga">
+        <article class="download-card android">
+          <div class="platform-heading">
+            <span class="platform-icon" aria-hidden="true">▶</span>
+            <div>
+              <p class="platform-name">Android</p>
+              <h2>Google Play</h2>
+            </div>
+          </div>
+          <div class="qr-frame" id="playstore-qr" aria-label="Código QR para descargar Okta Verify en Google Play"></div>
+          <a class="store-link" href="https://play.google.com/store/apps/details?id=com.okta.android.auth&amp;hl=en&amp;pli=1">
+            Abrir en Google Play <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="download-card ios">
+          <div class="platform-heading">
+            <span class="platform-icon apple" aria-hidden="true">●</span>
+            <div>
+              <p class="platform-name">iPhone</p>
+              <h2>App Store</h2>
+            </div>
+          </div>
+          <div class="qr-frame" id="appstore-qr" aria-label="Código QR para descargar Okta Verify en App Store"></div>
+          <a class="store-link" href="https://apps.apple.com/us/app/okta-verify/id490179405">
+            Abrir en App Store <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </section>
+
+      <p class="help-text">¿No puedes escanear el código? Usa el enlace debajo de cada opción.</p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+      const qrOptions = {
+        width: 220,
+        height: 220,
+        colorDark: '#111827',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      };
+
+      new QRCode(document.getElementById('playstore-qr'), {
+        ...qrOptions,
+        text: 'https://play.google.com/store/apps/details?id=com.okta.android.auth&hl=en&pli=1'
+      });
+      new QRCode(document.getElementById('appstore-qr'), {
+        ...qrOptions,
+        text: 'https://apps.apple.com/us/app/okta-verify/id490179405'
+      });
+    </script>
+  </body>
+</html>
